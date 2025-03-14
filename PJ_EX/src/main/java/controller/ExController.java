@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 /**
  * Servlet implementation class ExController 어노테이션
  */
-@WebServlet("/")
+@WebServlet("/ExController")
 public class ExController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
