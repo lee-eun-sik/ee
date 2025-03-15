@@ -53,3 +53,7 @@ tasks.withType(JavaCompile).configureEach {
 war {
     archiveFileName.set("MyWebApp.war")  // WAR 파일명 설정
 }
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
