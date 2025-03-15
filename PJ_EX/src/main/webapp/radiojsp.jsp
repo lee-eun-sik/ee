@@ -15,6 +15,18 @@
 		Calendar c = Calendar.getInstance();
 		SimpleDateFormat today = new SimpleDateFormat("yyyy-MM-dd");
 		SimpleDateFormat time = new SimpleDateFormat("hh:mm:ss");
+		String username = "";
+		Cookie[] cookies = request.getCookies();
+		//쿠키가 있을 경우
+		if (cookies != null) {
+			for (Cookie cookie : cookies) {
+				if(cookie.getName().equals("username")) {
+					username = cookie.getValue();
+					System.out.println("Username: "+username);
+				}
+			}
+		}
+		request.setAttribute("username", username);
 		String radio1 = request.getParameter("radio1");
 		String[] job = request.getParameterValues("job");
 		String[] interests = request.getParameterValues("interest");
