@@ -7,12 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method="get" action="04_textLogin.jsp">
+<form method="get" action="04_testLogin.jsp">
 	<label for="userid"> 아이디 : </label>
 	<input type="text" name="id" id="userid"><br>
 	
 	<label for="userpwd"> 암 &nbsp; 호 : </label>
-	<input type="text" name="id" id="userpwd"><br>
+	<input type="text" name="pwd" id="userpwd"><br>
 	
 	<input type="submit" value="로그인"> 
 </form>
