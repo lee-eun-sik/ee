@@ -23,5 +23,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/dldms/Downloads/json-20210307.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dldms/Downloads/jakarta-taglibs-standard-1.1.2/jakarta-taglibs-standard-1.1.2/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dldms/Downloads/jakarta-taglibs-standard-1.1.2/jakarta-taglibs-standard-1.1.2/lib/standard.jar"/>
 	<classpathentry kind="output" path="bin/default"/>
 </classpath>
