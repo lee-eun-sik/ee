@@ -29,8 +29,8 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/dldms/Downloads/json-20210307.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dldms/Downloads/jakarta-taglibs-standard-1.1.2/jakarta-taglibs-standard-1.1.2/lib"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/dldms/Downloads/json-20210307.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/dldms/Downloads/jakarta-taglibs-standard-1.1.2/jakarta-taglibs-standard-1.1.2/lib"/>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>
 			<attribute name="test" value="true"/>
@@ -45,7 +45,7 @@
 			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+	<classpathentry exported="true" kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>

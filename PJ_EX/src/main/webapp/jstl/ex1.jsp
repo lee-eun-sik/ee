@@ -33,7 +33,7 @@
 	</c:if>
 	
 	<c:if test="${not empty list2}">
-		리스트 맵 형태 데이타 </br>
+		리스트 맵 형태 데이타 <br>
 		<table>
 		<c:forEach var="data" items="${list2}"
 		varStatus="status">
