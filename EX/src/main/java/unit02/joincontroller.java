@@ -20,7 +20,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/joincontroller")
 public class joincontroller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -32,35 +32,37 @@ public class joincontroller extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String userId  = request.getParameter("userId");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String email = request.getParameter("email");
-		
+
 		Map userMap = new HashMap();
 		userMap.put("userId", userId);
 		userMap.put("username", username);
 		userMap.put("password", password);
 		userMap.put("email",  email);
-		
+
 		//ServletContext 객체 열기
 		ServletContext context = getServletContext();
 		//애플리케이션 스코프에 값 저장
 		context.setAttribute("userInfo_"+userId,  userMap);
-		
+
 		JSONObject jsonResponse = new JSONObject(); //JSON 응답 객체 생성
 		jsonResponse.put("success", true); //성공 여부
-		
+
 		PrintWriter out = response.getWriter();
 		out.print(jsonResponse.toString());
 		out.flush();

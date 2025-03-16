@@ -19,7 +19,7 @@ import jakarta.servlet.http.HttpSession;
  */
 @WebServlet("/loginCheck.do")
 public class LoginController extends HttpServlet {
-	
+
 	private static final long serialVersionUID = 4143507114085561790L;
 
 	/**
@@ -32,6 +32,7 @@ public class LoginController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request,response);
 	}
@@ -39,12 +40,13 @@ public class LoginController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JSONObject jsonResponse = new JSONObject();
-		
+
 		String id = request.getParameter("id");
 		String pass = request.getParameter("pass");
-		
+
 		//ServletContext 객체 열기
 		ServletContext context = getServletContext();
 		//애플리케이션 스코프에 값 꺼내오기
@@ -56,21 +58,21 @@ public class LoginController extends HttpServlet {
 			String checkId = (String) userMap.get("userId");
 			String checkPass = (String) userMap.get("password");
 			String name = (String) userMap.get("username");
-			
-			
+
+
 			//로그인 체크
 			if(checkId.equals(id) && checkPass.equals(pass)){
 				//성공시
 				HttpSession session = request.getSession();
 				session.setAttribute("userId", id);
-				session.setAttribute("userName", name); 
-				
+				session.setAttribute("userName", name);
+
 				jsonResponse.put("success", true); // 성공 여부
 			} else {
 				//실패시
 				jsonResponse.put("success", false); // 성공 여부
 			}
-			}	
+			}
 			PrintWriter out = response.getWriter();
 			out.print(jsonResponse.toString());
 	        out.flush();
